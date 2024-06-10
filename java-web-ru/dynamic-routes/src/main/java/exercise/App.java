@@ -26,7 +26,7 @@ public final class App {
                     .filter(item -> id.equals(item.get("id")))
                     .findFirst();
             if (compain.isEmpty()) {
-                throw new NotFoundResponse();
+                throw new NotFoundResponse("Company not found");
             }
             ctx.json(compain.get());
         });
